@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AvatarVault</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="announce-bar" id="announce-bar">
+    🎉 New items added this week! Check out the Faces and Accessories sections &nbsp;·&nbsp;
+    <span style="opacity:0.6; font-size:10px;">dismiss</span>
+    <button onclick="document.getElementById('announce-bar').style.display='none'" style="background:none;border:none;color:inherit;cursor:pointer;margin-left:6px;font-size:13px;">✕</button>
+</div>
+<div class="page-loader" id="page-loader"></div>
+<header>
+    <div class="logo" onclick="show('home')">AVATAR<span>VAULT</span></div>
+
+    <nav>
+        <a id="nav-home" onclick="show('home')">Home</a>
+        <a id="nav-about" onclick="show('about')">About</a>
+        <a id="nav-shop" onclick="show('shop')">Shop</a>
+        <a id="nav-login" onclick="show('login')">Login</a>
+        <a id="nav-register" onclick="show('register')">Register</a>
+        <a id="nav-contact" onclick="show('contact')">Contact</a>
+    </nav>
+
+    <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()">
+        <div class="toggle-track">
+            <div class="toggle-thumb"></div>
+        </div>
+        <span class="toggle-icon" id="theme-icon">💙</span>
+        <span id="theme-label">BLUE</span>
+    </button>
+</header>
+
+<div id="home" class="page active" data-title="AvatarVault - Roblox Avatar Shop">
+    <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <p class="hero-eyebrow">welcome to avatarvault 🎮</p>
+    <h1>AVATAR<br>VAULT</h1>
+    <p class="hero-sub">find cool avatar items for your roblox character. hats, faces, accessories and limited drops — all in one place.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="show('shop')">Browse Items</button>
+      <button class="btn-ghost" onclick="show('limited')">Limited Drops</button>
+    </div>
+    <div class="stats-bar">
+      <div class="stat"><div class="stat-num">60+</div><div class="stat-label">Items</div></div>
+      <div class="stat"><div class="stat-num">4</div><div class="stat-label">Categories</div></div>
+      <div class="stat"><div class="stat-num">3</div><div class="stat-label">Limited Drops</div></div>
+    </div>
+  </div>
+</div>
+
+<div id="shop" class="page" data-title="Shop - AvatarVault">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">SHOP</h2>
+      <span class="section-count">// CHOOSE A CATEGORY</span>
+    </div>
+    <div class="shop-grid">
+      <div class="shop-cat" onclick="show('hats')" style="--accent-color:rgba(0,136,255,0.18)">
+        <span class="shop-cat-icon">🎩</span>
+        <div class="shop-cat-name">HATS</div>
+        <div class="shop-cat-count">16 items</div>
+        <div class="shop-cat-arrow">EXPLORE →</div>
+      </div>
+      <div class="shop-cat" onclick="show('faces')" style="--accent-color:rgba(0,212,255,0.15)">
+        <span class="shop-cat-icon">😎</span>
+        <div class="shop-cat-name">FACES</div>
+        <div class="shop-cat-count">26 items</div>
+        <div class="shop-cat-arrow">EXPLORE →</div>
+      </div>
+      <div class="shop-cat" onclick="show('accessories')" style="--accent-color:rgba(255,45,85,0.15)">
+        <span class="shop-cat-icon">⚔️</span>
+        <div class="shop-cat-name">ACCESSORIES</div>
+        <div class="shop-cat-count">17 items</div>
+        <div class="shop-cat-arrow">EXPLORE →</div>
+      </div>
+      <div class="shop-cat" onclick="show('limited')" style="--accent-color:rgba(255,107,0,0.2)">
+        <span class="shop-cat-icon">⏳</span>
+        <div class="shop-cat-name">LIMITED</div>
+        <div class="shop-cat-count">3 drops</div>
+        <div class="shop-cat-arrow">EXPLORE →</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="hats" class="page" data-title="Hats - AvatarVault">
+  <div class="back-wrap"><button class="back-link" onclick="show('shop')">← BACK TO SHOP</button></div>
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">HATS</h2>
+      <span class="section-count">// 16 ITEMS &nbsp;<span class="wip-badge">🚧 more coming soon</span></span>
+    </div>
+    <div class="items-grid">
+        <div class="card" onclick="openPopup('Ace Hat w/ Necklace','149 R$',this.querySelector('img').src,'Hats','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_001.webp" alt="Ace Hat w/ Necklace" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Ace Hat w/ Necklace</h4>
+            <div class="card-footer">
+              <span class="price">149 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Luffy Full Body','199 R$',this.querySelector('img').src,'Hats','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_002.webp" alt="Luffy Full Body" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Luffy Full Body</h4>
+            <div class="card-footer">
+              <span class="price">199 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Gothic Sword','175 R$',this.querySelector('img').src,'Hats','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_003.webp" alt="Gothic Sword" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Gothic Sword</h4>
+            <div class="card-footer">
+              <span class="price">175 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Chopper Hat','99 R$',this.querySelector('img').src,'Hats','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_004.webp" alt="Chopper Hat" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Chopper Hat</h4>
+            <div class="card-footer">
+              <span class="price">99 R$</span> <span class="price-old">129 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Chopper Hat Back','129 R$',this.querySelector('img').src,'Hats','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_005.webp" alt="Chopper Hat Back" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Chopper Hat Back</h4>
+            <div class="card-footer">
+              <span class="price">129 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Whitebeard Full Head','249 R$',this.querySelector('img').src,'Hats','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_006.webp" alt="Whitebeard Full Head" class="new-item" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Whitebeard Full Head</h4>
+            <div class="card-footer">
+              <span class="price">249 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Skull Pirate Hat','89 R$',this.querySelector('img').src,'Hats','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_007.webp" alt="Skull Pirate Hat" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Skull Pirate Hat</h4>
+            <div class="card-footer">
+              <span class="price">89 R$</span> <span class="price-old">119 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Straw Hat','149 R$',this.querySelector('img').src,'Hats','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_008.webp" alt="Straw Hat" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Straw Hat</h4>
+            <div class="card-footer">
+              <span class="price">149 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Dark Horn Helmet','189 R$',this.querySelector('img').src,'Hats','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_009.webp" alt="Dark Horn Helmet" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Dark Horn Helmet</h4>
+            <div class="card-footer">
+              <span class="price">189 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Whitebeard Head V2','249 R$',this.querySelector('img').src,'Hats','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_006.webp" alt="Whitebeard Head V2" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Whitebeard Head V2</h4>
+            <div class="card-footer">
+              <span class="price">249 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Ace Full Head','179 R$',this.querySelector('img').src,'Hats','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_010.webp" alt="Ace Full Head" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Ace Full Head</h4>
+            <div class="card-footer">
+              <span class="price">179 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Ace Hat Only','159 R$',this.querySelector('img').src,'Hats','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_011.webp" alt="Ace Hat Only" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Ace Hat Only</h4>
+            <div class="card-footer">
+              <span class="price">159 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Straw Hat + Lightning','299 R$',this.querySelector('img').src,'Hats','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_012.webp" alt="Straw Hat + Lightning" class="new-item" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Straw Hat + Lightning</h4>
+            <div class="card-footer">
+              <span class="price">299 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Straw Hat Dark Aura','249 R$',this.querySelector('img').src,'Hats','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_013.webp" alt="Straw Hat Dark Aura" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Straw Hat Dark Aura</h4>
+            <div class="card-footer">
+              <span class="price">249 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Straw Hat Storm Aura','279 R$',this.querySelector('img').src,'Hats','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_014.webp" alt="Straw Hat Storm Aura" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Straw Hat Storm Aura</h4>
+            <div class="card-footer">
+              <span class="price">279 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Blue Oni Mask','219 R$',this.querySelector('img').src,'Hats','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_015.webp" alt="Blue Oni Mask" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Blue Oni Mask</h4>
+            <div class="card-footer">
+              <span class="price">219 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div></div>
+  </div>
+</div>
+
+<div id="faces" class="page" data-title="Faces - AvatarVault">
+  <div class="back-wrap"><button class="back-link" onclick="show('shop')">← BACK TO SHOP</button></div>
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">FACES</h2>
+      <span class="section-count">// 26 ITEMS</span>
+    </div>
+    <div class="items-grid">
+        <div class="card" onclick="openPopup('Luffy Squinting Laugh','75 R$',this.querySelector('img').src,'Faces','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_016.webp" alt="Luffy Squinting Laugh" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Luffy Squinting Laugh</h4>
+            <div class="card-footer">
+              <span class="price">75 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Markiplier','40 R$',this.querySelector('img').src,'Faces','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_017.webp" alt="Markiplier" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Markiplier</h4>
+            <div class="card-footer">
+              <span class="price">40 R$</span> <span class="price-old">52 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Thukuna','52 R$',this.querySelector('img').src,'Faces','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_018.webp" alt="Thukuna" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Thukuna</h4>
+            <div class="card-footer">
+              <span class="price">52 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Tongue Out Face','52 R$',this.querySelector('img').src,'Faces','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_019.webp" alt="Tongue Out Face" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Tongue Out Face</h4>
+            <div class="card-footer">
+              <span class="price">52 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('White Mask Face','52 R$',this.querySelector('img').src,'Faces','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_020.webp" alt="White Mask Face" loading="lazy"></div>
+          <div class="card-body">
+            <h4>White Mask Face</h4>
+            <div class="card-footer">
+              <span class="price">52 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Toji','52 R$',this.querySelector('img').src,'Faces','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_021.webp" alt="Toji" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Toji</h4>
+            <div class="card-footer">
+              <span class="price">52 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Luffy Gear 5 Face','89 R$',this.querySelector('img').src,'Faces','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_022.webp" alt="Luffy Gear 5 Face" class="new-item" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Luffy Gear 5 Face</h4>
+            <div class="card-footer">
+              <span class="price">89 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Luffy Gear 4 Angry','89 R$',this.querySelector('img').src,'Faces','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_023.webp" alt="Luffy Gear 4 Angry" class="new-item" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Luffy Gear 4 Angry</h4>
+            <div class="card-footer">
+              <span class="price">89 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Luffy Crazy Grin','65 R$',this.querySelector('img').src,'Faces','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_024.webp" alt="Luffy Crazy Grin" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Luffy Crazy Grin</h4>
+            <div class="card-footer">
+              <span class="price">65 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Luffy Curly Brow Laugh','45 R$',this.querySelector('img').src,'Faces','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_025.webp" alt="Luffy Curly Brow Laugh" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Luffy Curly Brow Laugh</h4>
+            <div class="card-footer">
+              <span class="price">45 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Luffy Gear 5 w/ Hair','99 R$',this.querySelector('img').src,'Faces','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_026.webp" alt="Luffy Gear 5 w/ Hair" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Luffy Gear 5 w/ Hair</h4>
+            <div class="card-footer">
+              <span class="price">99 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Zoro Battle Scar','75 R$',this.querySelector('img').src,'Faces','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_027.webp" alt="Zoro Battle Scar" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Zoro Battle Scar</h4>
+            <div class="card-footer">
+              <span class="price">75 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Zoro Bandana','75 R$',this.querySelector('img').src,'Faces','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_028.webp" alt="Zoro Bandana" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Zoro Bandana</h4>
+            <div class="card-footer">
+              <span class="price">75 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Zoro Green Hair','75 R$',this.querySelector('img').src,'Faces','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_029.webp" alt="Zoro Green Hair" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Zoro Green Hair</h4>
+            <div class="card-footer">
+              <span class="price">75 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Shanks Scar Face','89 R$',this.querySelector('img').src,'Faces','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_030.webp" alt="Shanks Scar Face" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Shanks Scar Face</h4>
+            <div class="card-footer">
+              <span class="price">89 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Luffy Frown Face','52 R$',this.querySelector('img').src,'Faces','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_031.webp" alt="Luffy Frown Face" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Luffy Frown Face</h4>
+            <div class="card-footer">
+              <span class="price">52 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Luffy Shocked Face','45 R$',this.querySelector('img').src,'Faces','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_032.webp" alt="Luffy Shocked Face" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Luffy Shocked Face</h4>
+            <div class="card-footer">
+              <span class="price">45 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Luffy Purple Eyes Rage','89 R$',this.querySelector('img').src,'Faces','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_033.webp" alt="Luffy Purple Eyes Rage" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Luffy Purple Eyes Rage</h4>
+            <div class="card-footer">
+              <span class="price">89 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Luffy Smug Face','45 R$',this.querySelector('img').src,'Faces','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_034.webp" alt="Luffy Smug Face" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Luffy Smug Face</h4>
+            <div class="card-footer">
+              <span class="price">45 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Luffy Squinting Laugh','52 R$',this.querySelector('img').src,'Faces','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_016.webp" alt="Luffy Squinting Laugh" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Luffy Squinting Laugh</h4>
+            <div class="card-footer">
+              <span class="price">52 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Luffy Happy Smile','89 R$',this.querySelector('img').src,'Faces','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_035.webp" alt="Luffy Happy Smile" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Luffy Happy Smile</h4>
+            <div class="card-footer">
+              <span class="price">89 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Doflamingo Grin','75 R$',this.querySelector('img').src,'Faces','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_036.png" alt="Doflamingo Grin" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Doflamingo Grin</h4>
+            <div class="card-footer">
+              <span class="price">75 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Crocodile Smirk','65 R$',this.querySelector('img').src,'Faces','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_037.png" alt="Crocodile Smirk" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Crocodile Smirk</h4>
+            <div class="card-footer">
+              <span class="price">65 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Doflamingo Grin V2','65 R$',this.querySelector('img').src,'Faces','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_036.png" alt="Doflamingo Grin V2" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Doflamingo Grin V2</h4>
+            <div class="card-footer">
+              <span class="price">65 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Cute Blush','55 R$',this.querySelector('img').src,'Faces','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_038.png" alt="Cute Blush" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Cute Blush</h4>
+            <div class="card-footer">
+              <span class="price">55 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Luffy Goggles Face','79 R$',this.querySelector('img').src,'Faces','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_039.webp" alt="Luffy Goggles Face" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Luffy Goggles Face</h4>
+            <div class="card-footer">
+              <span class="price">79 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div></div>
+  </div>
+</div>
+
+<div id="accessories" class="page" data-title="Accessories - AvatarVault">
+  <div class="back-wrap"><button class="back-link" onclick="show('shop')">← BACK TO SHOP</button></div>
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">ACCESSORIES</h2>
+      <span class="section-count">// 17 ITEMS</span>
+    </div>
+    <div class="items-grid">
+        <div class="card" onclick="openPopup('Toji Worm','19 R$',this.querySelector('img').src,'Accessories','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_040.webp" alt="Toji Worm" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Toji Worm</h4>
+            <div class="card-footer">
+              <span class="price">19 R$</span> <span class="price-old">29 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Rika Yuta Cursed','29 R$',this.querySelector('img').src,'Accessories','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_041.webp" alt="Rika Yuta Cursed" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Rika Yuta Cursed</h4>
+            <div class="card-footer">
+              <span class="price">29 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Wheelchair','35 R$',this.querySelector('img').src,'Accessories','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_042.webp" alt="Wheelchair" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Wheelchair</h4>
+            <div class="card-footer">
+              <span class="price">35 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Luffy Gear 5 Aura','29 R$',this.querySelector('img').src,'Accessories','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_043.webp" alt="Luffy Gear 5 Aura" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Luffy Gear 5 Aura</h4>
+            <div class="card-footer">
+              <span class="price">29 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" data-sold="true" onclick="openPopup('Cyan Lightning Dragon Heads','TBA',this.querySelector('img').src,'Accessories','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_044.webp" alt="Cyan Lightning Dragon Heads" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Cyan Lightning Dragon Heads</h4>
+            <div class="card-footer">
+              <span class="price">TBA</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Going Merry Ship','299 R$',this.querySelector('img').src,'Accessories','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_045.webp" alt="Going Merry Ship" class="new-item" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Going Merry Ship</h4>
+            <div class="card-footer">
+              <span class="price">299 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Luffy Plushie','89 R$',this.querySelector('img').src,'Accessories','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_046.webp" alt="Luffy Plushie" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Luffy Plushie</h4>
+            <div class="card-footer">
+              <span class="price">89 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Straw Hat Flag White','59 R$',this.querySelector('img').src,'Accessories','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_047.webp" alt="Straw Hat Flag White" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Straw Hat Flag White</h4>
+            <div class="card-footer">
+              <span class="price">59 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Straw Hat Flag Black','59 R$',this.querySelector('img').src,'Accessories','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_048.webp" alt="Straw Hat Flag Black" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Straw Hat Flag Black</h4>
+            <div class="card-footer">
+              <span class="price">59 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Straw Hat Chain Necklace','75 R$',this.querySelector('img').src,'Accessories','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_049.webp" alt="Straw Hat Chain Necklace" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Straw Hat Chain Necklace</h4>
+            <div class="card-footer">
+              <span class="price">75 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Luffy Skull Keychain','55 R$',this.querySelector('img').src,'Accessories','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_050.webp" alt="Luffy Skull Keychain" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Luffy Skull Keychain</h4>
+            <div class="card-footer">
+              <span class="price">55 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Brook Skull Pendant','65 R$',this.querySelector('img').src,'Accessories','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_051.webp" alt="Brook Skull Pendant" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Brook Skull Pendant</h4>
+            <div class="card-footer">
+              <span class="price">65 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Wanted Poster Frame','45 R$',this.querySelector('img').src,'Accessories','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_052.webp" alt="Wanted Poster Frame" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Wanted Poster Frame</h4>
+            <div class="card-footer">
+              <span class="price">45 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Zoro Three Swords','189 R$',this.querySelector('img').src,'Accessories','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_053.webp" alt="Zoro Three Swords" class="new-item" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Zoro Three Swords</h4>
+            <div class="card-footer">
+              <span class="price">189 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Marine Admiral Cloak','249 R$',this.querySelector('img').src,'Accessories','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_054.webp" alt="Marine Admiral Cloak" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Marine Admiral Cloak</h4>
+            <div class="card-footer">
+              <span class="price">249 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Chocobo Rider','175 R$',this.querySelector('img').src,'Accessories','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_055.webp" alt="Chocobo Rider" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Chocobo Rider</h4>
+            <div class="card-footer">
+              <span class="price">175 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" data-sold="true" onclick="openPopup('Swan Wings','149 R$',this.querySelector('img').src,'Accessories','')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_056.webp" alt="Swan Wings" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Swan Wings</h4>
+            <div class="card-footer">
+              <span class="price">149 R$</span>
+              
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div></div>
+  </div>
+</div>
+
+<div id="limited" class="page" data-title="Limited Items - AvatarVault">
+  <div class="back-wrap"><button class="back-link" onclick="show('shop')">← BACK TO SHOP</button></div>
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">LIMITED</h2>
+      <span class="section-count">// LIVE DROPS · 3 REMAINING</span>
+    </div>
+    <div class="items-grid">
+        <div class="card" onclick="openPopup('Mera Mera no Mi','999 R$',this.querySelector('img').src,'Limited','02:10:45')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_057.webp" alt="Mera Mera no Mi" class="new-item" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Mera Mera no Mi</h4>
+            <div class="card-footer">
+              <span class="price">999 R$</span>
+              <div class="timer">⏳ 02:10:45</div>
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Ito Ito no Mi','899 R$',this.querySelector('img').src,'Limited','01:05:30')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_058.webp" alt="Ito Ito no Mi" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Ito Ito no Mi</h4>
+            <div class="card-footer">
+              <span class="price">899 R$</span>
+              <div class="timer">⏳ 01:05:30</div>
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="openPopup('Hito Hito no Mi','1299 R$',this.querySelector('img').src,'Limited','03:22:10')" style="cursor:pointer">
+          <div class="card-img-wrap"><img src="images/img_059.webp" alt="Hito Hito no Mi" loading="lazy"></div>
+          <div class="card-body">
+            <h4>Hito Hito no Mi</h4>
+            <div class="card-footer">
+              <span class="price">1299 R$</span>
+              <div class="timer">⏳ 03:22:10</div>
+              <button class="buy-btn">Buy Now</button>
+            </div>
+          </div>
+        </div></div>
+  </div>
+</div>
+
+<div id="about" class="page" data-title="About Us - AvatarVault">
+  <div class="about-wrap">
+    <h2>ABOUT US</h2>
+    <p>AvatarVault is a collaborative project built by a team of passionate Roblox players and web developers dedicated to bringing you the best avatar items on the platform.</p>
+    <p>From iconic anime-inspired faces to rare limited drops, our team curates and updates the catalog so your avatar always stays ahead of the curve.</p>
+    <p>Express your style. Unlock unique looks. Grab limiteds before they're gone.</p>
+    <p class="page-credit">page made by: Ron G. &amp; Misenila P.</p>
+    <div class="tag-row">
+      <span class="tag">ROBLOX ITEMS</span>
+      <span class="tag">ANIME-THEMED</span>
+      <span class="tag">DAILY DROPS</span>
+      <span class="tag">60+ ITEMS</span>
+      <span class="tag">ONE PIECE COLLAB</span>
+    </div>
+  </div>
+</div>
+
+<div id="login" class="page" data-title="Login - AvatarVault">
+  <div class="form-wrap">
+    <h2>LOGIN</h2>
+    <p>Placeholder for future account system 🛡️</p>
+    <div class="form-field"><label>Username</label><input type="text" placeholder="your_username"></div>
+    <div class="form-field"><label>Password</label><input type="password" placeholder="••••••••"></div>
+    <button class="btn-primary btn-full">SIGN IN</button>
+  </div>
+</div>
+
+<div id="register" class="page" data-title="Register - AvatarVault">
+  <div class="form-wrap">
+    <h2>REGISTER</h2>
+    <p>Create your AvatarVault account 🛡️</p>
+    <div class="form-field"><label>Username</label><input type="text" placeholder="your_username"></div>
+    <div class="form-field"><label>Email</label><input type="email" placeholder="you@email.com"></div>
+    <div class="form-field"><label>Password</label><input type="password" placeholder="••••••••"></div>
+    <button class="btn-primary btn-full">CREATE ACCOUNT</button>
+  </div>
+</div>
+
+<div id="contact" class="page" data-title="Contact - AvatarVault">
+  <div class="contact-wrap">
+    <h2>CONTACT</h2>
+    <div class="contact-card">
+      <h4>Email</h4>
+      <p><a href="mailto:gonzaga.polistico.jubilo.naga.mondejar@gmail.com">gonzaga.polistico.jubilo.naga.mondejar@gmail.com</a></p>
+    </div>
+    <div class="contact-card">
+      <h4>Web Developers</h4>
+      <p>Gonzaga, Ron Joseph L.<br>Polistico, Misenila G.<br>Jubilo, [firstname] [lastname]<br>Naga, [firstname] [lastname]<br>Mondejar, [firstname] [lastname]</p>
+    </div>
+    <div class="contact-card">
+      <h4>Last Updated</h4>
+      <p id="last-updated-date">March 2026</p>
+    </div>
+    <div class="contact-card">
+      <h4>Support</h4>
+      <p>Message us anytime — we respond within 24 hours 💌</p>
+      <p style="margin-top:10px"><a href="#" style="color:#7289da">Join our Discord →</a></p>
+    </div>
+  </div>
+</div>
+
+
+<footer>
+    <div class="footer-links">
+        <a href="#" onclick="return false">Twitter</a>
+        <a href="#" onclick="return false">Discord</a>
+        <a href="#" onclick="return false">YouTube</a>
+        <a href="#" onclick="return false">Roblox Group</a>
+    </div>
+    <p>© <span id="footer-year"></span> AvatarVault. All Rights Reserved.</p>
+</footer>
+
+<div class="overlay" id="popup-overlay" onclick="closePopupOnOverlay(event)">
+  <div class="popup" id="popup-box">
+    <button class="popup-close" onclick="closePopup()">✕</button>
+    <div class="popup-preview">
+      <span class="popup-badge" id="popup-badge">FACE</span>
+      <img id="popup-img" src="" alt="">
+    </div>
+    <div class="popup-body">
+      <div class="popup-category" id="popup-cat"></div>
+      <div class="popup-name" id="popup-name"></div>
+      <div class="popup-stats">
+        <div class="popup-stat">
+          <div class="popup-stat-label">Price</div>
+          <div class="popup-stat-val price-val" id="popup-price"></div>
+        </div>
+        <div class="popup-stat">
+          <div class="popup-stat-label">Type</div>
+          <div class="popup-stat-val popup-type-val" id="popup-type"></div>
+        </div>
+        <div class="popup-stat">
+          <div class="popup-stat-label">Stock</div>
+          <div class="popup-stat-val" id="popup-stock"></div>
+        </div>
+      </div>
+      <div class="popup-meta">
+        <span class="popup-item-id" id="popup-item-id">#0000000</span>
+        <span class="popup-favs" id="popup-favs">♡ 0k</span>
+        <span class="popup-stars" id="popup-stars">★★★★☆</span>
+      </div>
+      <div class="popup-timer" id="popup-timer" style="display:none">
+        ⏳ <span>LIMITED TIME REMAINING: </span><strong id="popup-timer-val"></strong>
+      </div>
+      <div class="popup-desc" id="popup-desc"></div>
+      <div class="popup-actions">
+        <button class="popup-buy" id="popup-buy-btn" onclick="handleBuy()">BUY NOW</button>
+        <button class="popup-wishlist" id="popup-wishlist-btn" onclick="toggleWishlist()" title="Add to wishlist">♡</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <button class="back-to-top" id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>
